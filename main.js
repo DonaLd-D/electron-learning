@@ -12,7 +12,7 @@ function createWindow () {
   })
 
   win.loadFile('index2.html')
-  win.setProgressBar(0.9)
+  require('./main/main.js')
   win.webContents.openDevTools()
 }
 
