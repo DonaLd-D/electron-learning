@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, BrowserView} = require('electron')
 require('@electron/remote/main').initialize()
 
 function createWindow () {
@@ -12,8 +12,13 @@ function createWindow () {
   })
 
   win.webContents.openDevTools()
-  win.loadFile('index4.html')
+  win.loadFile('index2.html')
   require('./main/main.js')
+
+  var view = new BrowserView()
+  win.setBrowserView(view)
+  view.setBounds({x:0,y:100,width:600, height:400})
+  view.webContents.loadURL('https://jspang.com')
 }
 
 app.whenReady().then(createWindow)
