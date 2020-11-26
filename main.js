@@ -1,4 +1,4 @@
-const { app, BrowserWindow, BrowserView} = require('electron')
+const { app, BrowserWindow, BrowserView,globalShortcut} = require('electron')
 require('@electron/remote/main').initialize()
 
 function createWindow () {
@@ -12,6 +12,9 @@ function createWindow () {
   })
 
   win.webContents.openDevTools()
+  globalShortcut.register('ctrl+e',()=>{
+    win.loadURL('https://jspang.com')  
+  })
   win.loadFile('index7.html')
   require('./main/main.js')
 
@@ -33,4 +36,11 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }
+})
+
+app.on('will-quit',function(){
+  //注销全局快捷键的监听
+  globalShortcut.unregister('ctrl+e')
+  globalShortcut.unregisterAll()
+
 })
