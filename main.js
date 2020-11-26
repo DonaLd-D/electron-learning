@@ -12,7 +12,7 @@ function createWindow () {
   })
 
   win.webContents.openDevTools()
-  win.loadFile('index6.html')
+  win.loadFile('index7.html')
   require('./main/main.js')
 
 //   var view = new BrowserView()
