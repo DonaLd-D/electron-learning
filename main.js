@@ -1,15 +1,18 @@
 const { app, BrowserWindow } = require('electron')
+require('@electron/remote/main').initialize()
 
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('index2.html')
+  win.setProgressBar(0.9)
   win.webContents.openDevTools()
 }
 
