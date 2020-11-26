@@ -10,10 +10,10 @@ function createWindow () {
       enableRemoteModule: true
     }
   })
-
+  
+  win.webContents.openDevTools()
   win.loadFile('index2.html')
   require('./main/main.js')
-  win.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)

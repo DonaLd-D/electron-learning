@@ -7,6 +7,7 @@ var template = [
             {
                 label:'精品SPA',
                 //主要代码--------------start
+                accelerator:`ctrl+n`,
                 click:()=>{
                     win = new BrowserWindow({
                         width:500,
