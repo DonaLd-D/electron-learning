@@ -15,7 +15,7 @@ function createWindow () {
   globalShortcut.register('ctrl+e',()=>{
     win.loadURL('https://jspang.com')  
   })
-  win.loadFile('index7.html')
+  win.loadFile('index8.html')
   require('./main/main.js')
 
 //   var view = new BrowserView()
